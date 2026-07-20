@@ -39,13 +39,27 @@ api:
 ```
 ```
 🔑 Endpoints disponibles
-1. Realizar tipo de cambio  
-POST /api/v1/experience/exchange
-Valida usuario en GoRest.
-Calcula monto final.
-Llama al API de Soporte para registrar en BD.
-Devuelve mensaje de confirmación.
 
+POST /api/v1/experiencia/auth/login?username=Kevin
+Endpoint de autenticación para iniciar generar el token y consumir los endpoints
+
+PUT /api/v1/experiencia/actualizar/{id}  
+Actualiza una operación existente en la base de datos usando el ID.
+
+POST /api/v1/experiencia/registrarCambio  
+Registra una nueva operación de tipo de cambio validando usuario y calculando el monto final.
+
+GET /api/v1/experiencia/origen/{monedaOrigen}  
+Busca operaciones filtradas por la moneda de origen.
+
+GET /api/v1/experiencia/listarOperaciones  
+Lista todas las operaciones registradas en la base de datos.
+
+GET /api/v1/experiencia/destino/{monedaDestino}  
+Busca operaciones filtradas por la moneda de destino.
+
+DELETE /api/v1/experiencia/eliminar/{id}  
+Elimina una operación existente en la base de datos usando el ID.
 ```
 🧪 Ejemplo en Postman
 Realizar cambio
